@@ -10,7 +10,7 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:3000/login/', { // URL correcta
+      const response = await fetch('https://mantenimientob.ddns.net/login/', { // URL de la API desplegada
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

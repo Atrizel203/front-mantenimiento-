@@ -11,7 +11,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/images'); // Ajusta la URL según tu configuración
+        const response = await axios.get('https://mantenimientob.ddns.net/images'); // URL de la API desplegada
         const sortedImages = sortImages(response.data.data, sortOrder);
         setImages(sortedImages); // Ajusta la ruta a los datos según la respuesta de tu API
       } catch (error) {
@@ -43,7 +43,7 @@ const AdminDashboard = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3000/images/${imageId}`); // Ajusta la URL según tu configuración
+          await axios.delete(`https://mantenimientob.ddns.net/images/${imageId}`); // URL de la API desplegada
           setImages(images.filter(image => image.id !== imageId)); // Actualiza el estado eliminando la imagen
           Swal.fire(
             'Eliminada!',
